@@ -1058,7 +1058,7 @@ namespace HLTextureTools
                     Color transp = Color.FromArgb(0, Color.Red);
                     //Color transpB = Color.FromArgb(0, Color.Blue);
                     IntPtr hBmp = ((Bitmap)lastImageViewed).GetHbitmap(transp);
-                    using (FreeImageAPI.FreeImageBitmap fBmp = FreeImageAPI.FreeImageBitmap.FromHbitmap(hBmp))
+                    using (FreeImageAPI.FreeImageBitmap fBmp = FreeImageAPI.FreeImageBitmap.FromHbitmap(hBmp) as FreeImageAPI.FreeImageBitmap)
                     {
 
                         if (zoom)

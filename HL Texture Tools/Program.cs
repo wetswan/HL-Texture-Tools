@@ -12,11 +12,12 @@ namespace HLTextureTools
         [STAThread]
         static void Main()
         {
-            if (!FreeImageAPI.FreeImage.IsAvailable())
-            {
-                MessageBox.Show("FreeImage.dll seems to be missing. Aborting.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return;
-            }
+            //todo?
+            //if (!FreeImageAPI.FreeImage.IsAvailable())
+            //{
+            //    MessageBox.Show("FreeImage.dll seems to be missing. Aborting.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            //    return;
+            //}
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

@@ -652,7 +652,7 @@ namespace HLTools
                     string image = images[i];
 
                     //Quantize images
-                    FreeImageBitmap originalImage = FreeImageBitmap.FromFile(image);
+                    FreeImageBitmap originalImage = FreeImageBitmapBase.FromFile(image) as FreeImageBitmap;
 
                     //If texture will be transparent, reserve last color if enabled
                     bool reserveLastClr = (names[i].StartsWith("{") && reserverLastPalColor);
@@ -713,7 +713,7 @@ namespace HLTools
                         int heightMM = (imgs[i].Height / factor);
 
 
-                        using (FreeImageBitmap clBmp = imgs[i].GetScaledInstance(widthMM, heightMM, FREE_IMAGE_FILTER.FILTER_LANCZOS3))
+                        using (FreeImageBitmap clBmp = imgs[i].GetScaledInstance(widthMM, heightMM, FREE_IMAGE_FILTER.FILTER_LANCZOS3) as FreeImageBitmap)
                         {
                             //TODO: opravit png, priesvitnost 
                             clBmp.Quantize(FREE_IMAGE_QUANTIZE.FIQ_NNQUANT, MaxPaletteColors, imgs[i].Palette);
